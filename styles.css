@@ -1,0 +1,121 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Container Styling */
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+/* Title Styling */
+h1 {
+    font-size: 2.5rem;
+    color: #d32f2f;
+    margin-bottom: 20px;
+    animation: bounce 2s infinite;
+}
+
+/* Button Styling */
+.btn {
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #b71c1c;
+    transform: scale(1.1);
+}
+
+/* Joke Container Styling */
+.joke-container {
+    margin-top: 30px;
+    padding: 20px;
+    min-height: 100px;
+    background: rgba(255, 255, 255, 0.6);
+    border: 2px dashed #d32f2f;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.joke-container:hover {
+    transform: scale(1.05);
+}
+
+/* Animation for the Title */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Confetti Animation */
+.confetti {
+    position: absolute;
+    top: -10%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.confetti span {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    animation: fall linear infinite;
+}
+
+.confetti span:nth-child(1) { top: 0; left: 10%; animation-duration: 5s; }
+.confetti span:nth-child(2) { top: 0; left: 20%; animation-duration: 7s; }
+.confetti span:nth-child(3) { top: 0; left: 30%; animation-duration: 6s; }
+.confetti span:nth-child(4) { top: 0; left: 40%; animation-duration: 8s; }
+.confetti span:nth-child(5) { top: 0; left: 50%; animation-duration: 5s; }
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
